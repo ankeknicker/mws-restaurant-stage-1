@@ -11,6 +11,7 @@ body {
 	background-color: #fdfdfd;
 	margin: 0;
 	position:relative;
+    display: flex;
 }
 ul, li {
 	font-family: Arial, Helvetica, sans-serif;
@@ -33,7 +34,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 20px;
 }
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-	display: block;
+	/*display: block;*/
 }
 #maincontent {
   background-color: #f3f3f3;
@@ -272,4 +273,41 @@ nav h1 a {
 }
 #restaurant-hours td {
   color: #666;
+}
+
+@media screen and (max-width: 550px) {
+  .inside #map-container {
+    width: 100%;
+    height: 300px;
+    position: relative;
+  }
+  /*#map {
+    position: relative;
+  }*/
+  #restaurant-container {
+    width: 100%;
+  }
+  #reviews-container {
+    width: 100%;
+  }
+  #breadcrumb {
+    width: 100%;
+  }
+  #restaurants-list {
+    padding: 0;
+    overflow-x: hidden;
+  }
+  #restaurants-list ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  #restaurants-list li {
+    width: calc(100% - 20px);
+    margin: 10px 0;
+    padding: 10px;
+  }
+  #restaurant-hours {
+    width: 100%;
+  }
 }
