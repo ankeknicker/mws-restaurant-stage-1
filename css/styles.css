@@ -12,6 +12,7 @@ body {
 	margin: 0;
 	position:relative;
     display: flex;
+  flex-direction: column;
 }
 ul, li {
 	font-family: Arial, Helvetica, sans-serif;
@@ -35,6 +36,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 	/*display: block;*/
+}
+footer {
+  margin-top: auto;
 }
 #maincontent {
   background-color: #f3f3f3;
@@ -137,6 +141,8 @@ nav h1 a {
   margin: 0;
   padding: 30px 15px 60px;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 #restaurants-list li {
   background-color: #fff;
@@ -147,6 +153,7 @@ nav h1 a {
   padding: 0 30px 25px;
   text-align: left;
   width: 270px;
+  flex-grow: 1;
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
