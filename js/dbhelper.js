@@ -155,7 +155,7 @@ class DBHelper {
   }
 
     /**
-     * Restaurant image URLS.
+     * Restaurant image URLS - returns a String of responsive images.
      */
   static imageSrcSetsForRestaurant(restaurant) {
         var photograph = restaurant.photograph.split(".");

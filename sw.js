@@ -37,7 +37,7 @@ self.addEventListener('fetch', function(event) {
     } else {
         event.respondWith(
             caches.match(event.request).then(function(cacheResponse) {
-                /* if there is already a cached response for the event-request, use this response,
+                /** if there is already a cached response for the event-request, use this response,
                 else fetch the event, save the network-response and return it */
                 return cacheResponse || fetch(event.request).then(function(networkResponse) {
                         return caches.open(CACHE_NAME).then(function(cache) {
