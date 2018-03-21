@@ -34,9 +34,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0 0 20px;
 }
-article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-	/*display: block;*/
-}
 
 #breadcrumblabel {
   background-color: #eee;
@@ -47,8 +44,6 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 #maincontent {
   background-color: #f3f3f3;
   min-height: 100%;
-  /*display: flex;
-  flex-wrap: wrap;*/
 }
 #footer {
   background-color: #444;
@@ -83,7 +78,6 @@ nav h1 a {
     background-color: #eee;
     font-size: 17px;
     margin: 0;
-    /*width: calc(50% - 80px);*/
 }
 
 /* Display list items side by side */
@@ -119,7 +113,7 @@ nav h1 a {
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
   width: 100%;
-  height: 50px;
+  height: 100px;
   background-color: #3397DB;
   align-items: center;
 }
@@ -151,6 +145,7 @@ nav h1 a {
   text-align: center;
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 #restaurants-list li {
   background-color: #fff;
@@ -280,17 +275,23 @@ header {
   padding: 50px;
 }
 
+#rlistWithFilters {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+/* ====================== small displays layout adaption ====================== */
 @media screen and (max-width: 550px) {
   #map-container {
     width: 100%;
     height: 300px;
     position: relative;
+    margin-bottom: 100px;
+
   }
-  /*#map {
-    position: relative;
-  }*/
+
   #restaurant-container {
-    /*padding: 60px 40px 30px;*/
     min-width: calc(100% - 10px);
     padding: 5px;
     flex-grow: 0;
@@ -320,6 +321,10 @@ header {
     padding: 10px;
   }
   #restaurant-hours {
+    width: 100%;
+  }
+  .filter-options {
+    height: 100px;
     width: 100%;
   }
 }
