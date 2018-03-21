@@ -150,8 +150,17 @@ class DBHelper {
    * Restaurant image URL.
    */
   static imageUrlForRestaurant(restaurant) {
-    return (`/img/${restaurant.photograph}`);
+      var photograph = restaurant.photograph.split(".");
+    return (`/images/${photograph[0]}-big2x.jpg`);
   }
+
+    /**
+     * Restaurant image URLS.
+     */
+  static imageSrcSetsForRestaurant(restaurant) {
+        var photograph = restaurant.photograph.split(".");
+        return (`/images/${photograph[0]}-big2x.jpg 800w, /images/${photograph[0]}-small1x.jpg 400w`);
+    }
 
   /**
    * Map marker for a restaurant.
