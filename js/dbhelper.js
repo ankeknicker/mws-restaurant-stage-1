@@ -151,7 +151,7 @@ class DBHelper {
    */
   static imageUrlForRestaurant(restaurant) {
       var photograph = restaurant.photograph.split(".");
-    return (`/images/${photograph[0]}-big2x.jpg`);
+    return (`/images/${photograph[0]}-middle2x.jpg`);
   }
 
     /**
@@ -159,7 +159,7 @@ class DBHelper {
      */
   static imageSrcSetsForRestaurant(restaurant) {
         var photograph = restaurant.photograph.split(".");
-        return (`/images/${photograph[0]}-big2x.jpg 800w, /images/${photograph[0]}-small1x.jpg 400w`);
+        return (` /images/${photograph[0]}-small1x.jpg 450w,  /images/${photograph[0]}-middle2x.jpg 600w, /images/${photograph[0]}-big2x.jpg 800w`);
     }
 
   /**

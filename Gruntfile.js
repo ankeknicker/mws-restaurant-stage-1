@@ -15,8 +15,8 @@ module.exports = function(grunt) {
           engine: 'im',
           sizes: [{
               name: "small",
-              width: 400,
-              quality: 50,
+              width: 450,
+              quality: 40,
               suffix: "1x"
             /*
             Change these:
@@ -25,6 +25,11 @@ module.exports = function(grunt) {
             suffix: ,
             quality:
             */
+          },{
+              name: "middle",
+              width: 600,
+              quality: 70,
+              suffix: "2x"
           }, {
             name: "big",
               width: 800,
