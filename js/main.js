@@ -297,7 +297,7 @@ createRestaurantHTML = (restaurant) => {
         image.setAttribute("srcset", DBHelper.imageSrcSetsForRestaurant(restaurant));
         image.src = DBHelper.imageUrlForRestaurant(restaurant);
         image.setAttribute("alt", restaurant.name);
-        //image.setAttribute("sizes", "(max-width: 450px) 100vw, (min-width: 451px) and (max-width:600px) 100vw, (min-width: 601px) 50vw");
+        image.setAttribute("sizes", "(max-width: 450px) 100vw, (min-width: 451px) and (max-width:600px) 100vw, (min-width: 601px) 50vw");
         li.append(image);
 
         const name = document.createElement('h2');
@@ -334,7 +334,7 @@ createRestaurantHTML = (restaurant) => {
     });
     }
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h2');
   name.innerHTML = restaurant.name;
   li.append(name);
 

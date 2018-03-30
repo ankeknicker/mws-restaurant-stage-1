@@ -19,7 +19,7 @@
       <h1><a href="/" title="Restaurant Reviews">Restaurant Reviews</a></h1>
     </nav>
     <!-- Beginning breadcrumb -->
-    <nav aria-label="breadcrumb">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
       <p id="breadcrumblabel">You are here:</p>
       <ol id="breadcrumb" aria-labelledby="breadcrumblabel">
         <li><a href="/" title="Home">Home</a></li>
@@ -33,24 +33,24 @@
   <!-- Beginning main -->
   <main id="maincontent">
     <!-- Beginning map -->
-    <section id="map-container">
-      <div id="map" tabindex="0" role="application"></div>
+    <section id="map-container" aria-label="Google Map" aria-hidden="true">
+      <div id="map" tabindex="0" role="application" aria-hidden="true"></div>
     </section>
     <!-- End map -->
     <!-- Beginning restaurant -->
     <section id="restaurant-details-container">
-    <section id="restaurant-container">
-      <h2 id="restaurant-name"></h2>
-      <img id="restaurant-img">
-      <p id="restaurant-cuisine"></p>
-      <p id="restaurant-address"></p>
-      <table id="restaurant-hours"></table>
-    </section>
-    <!-- end restaurant -->
-    <!-- Beginning reviews -->
-    <section id="reviews-container">
-      <ul id="reviews-list"></ul>
-    </section>
+      <section id="restaurant-container" aria-label="Restaurant Information">
+        <h2 id="restaurant-name"></h2>
+        <img id="restaurant-img">
+        <p id="restaurant-cuisine"></p>
+        <p id="restaurant-address"></p>
+        <table id="restaurant-hours"></table>
+      </section>
+      <!-- end restaurant -->
+      <!-- Beginning reviews -->
+      <section id="reviews-container" aria-label="Restaurant Reviews">
+        <ul id="reviews-list"></ul>
+      </section>
     </section>
     <!-- End reviews -->
   </main>
