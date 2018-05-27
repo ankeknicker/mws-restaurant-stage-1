@@ -7,6 +7,7 @@
 */
 
 module.exports = function(grunt) {
+  require('load-grunt-tasks')(grunt);
 
   grunt.initConfig({
     responsive_images: {
@@ -51,13 +52,6 @@ module.exports = function(grunt) {
       }
     },
 
-    /* Clear out the images directory if it exists */
-    clean: {
-      dev: {
-        src: ['images'],
-      },
-    },
-
     /* Generate the images directory if it is missing */
     mkdir: {
       dev: {
@@ -66,12 +60,46 @@ module.exports = function(grunt) {
         },
       },
     },
+
+      ts: {
+          default: {
+              files: {
+                  'TSTemp': ['TS/**/*.ts', '!TS/.baseDir.ts']
+              },
+              options: {
+                  target: 'es6',
+                  moduleResolution: 'node',
+                  types: 'node',
+                  typeRoots: 'node_modules/@types'
+              }
+          }
+      },
+      babel: {
+          options: {
+              sourceMap: true
+          },
+          dist: {
+              files: [{
+                  expand: true,
+                  cwd: "TSTemp",
+                  src: "**/*.js",
+                  dest: "TS",
+                  ext: ".js"
+              }]
+          }
+      },
+
+      /* clear the typescript temp files, typescript baseDir, and images directory */
+      clean: {
+          tsTemp: ["TSTemp"],
+          tsFile: ["TS/.baseDir.ts"],
+          dev: {
+              src: ['images'],
+          },
+      },
   });
   
-  grunt.loadNpmTasks('grunt-responsive-images');
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-mkdir');
-  grunt.registerTask('default', ['clean', 'mkdir', 'responsive_images']);
+  grunt.loadNpmTasks('grunt-responsive-images','grunt-contrib-clean','grunt-contrib-copy','grunt-mkdir','grunt-ts','grunt-babel');
+  grunt.registerTask('default', ['clean', 'mkdir', 'responsive_images', 'ts:default', 'babel', 'clean:tsTemp', 'clean:tsFile']);
 
 };
